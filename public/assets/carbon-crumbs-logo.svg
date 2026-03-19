@@ -1,0 +1,23 @@
+<svg width="360" height="120" viewBox="0 0 360 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="leafGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E7F2DD"/>
+      <stop offset="55%" stop-color="#A6C38A"/>
+      <stop offset="100%" stop-color="#6F8B68"/>
+    </linearGradient>
+    <linearGradient id="soilGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#DCC8A7"/>
+      <stop offset="100%" stop-color="#A07A55"/>
+    </linearGradient>
+  </defs>
+  <rect x="6" y="10" width="100" height="100" rx="30" fill="#FFF9F1"/>
+  <path d="M56 28C41 28 31 39 31 53C31 66 39 76 51 79V96C51 99 53 101 56 101C59 101 61 99 61 96V79C73 76 81 66 81 53C81 39 71 28 56 28Z" fill="url(#soilGrad)"/>
+  <path d="M56 21C63 14 76 14 81 22C85 29 83 39 76 44C66 51 56 58 56 58C56 58 46 51 36 44C29 39 27 29 31 22C36 14 49 14 56 21Z" fill="url(#leafGrad)"/>
+  <circle cx="30" cy="79" r="8" fill="#D7E7CB"/>
+  <circle cx="82" cy="79" r="8" fill="#D7E7CB"/>
+  <circle cx="42" cy="67" r="6" fill="#D7E7CB"/>
+  <circle cx="70" cy="67" r="6" fill="#D7E7CB"/>
+  <text x="124" y="56" fill="#5f8763" font-family="Georgia, serif" font-size="34" font-weight="700">Carbon</text>
+  <text x="124" y="88" fill="#8fb58f" font-family="Georgia, serif" font-size="34" font-weight="700">Crumbs</text>
+  <text x="126" y="106" fill="#aac9a8" font-family="Arial, sans-serif" font-size="12" letter-spacing="1.8">SMALL STEPS. LIVING EARTH.</text>
+</svg>

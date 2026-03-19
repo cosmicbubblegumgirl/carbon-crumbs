@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carbon Crumbs</title>
+    <meta
+      name="description"
+      content="Carbon Crumbs - A personal project to track carbon footprints with cute animal companions and earthy visuals."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./config.js"></script>
+  </head>
+  <body>
+    <div class="site-backdrop"></div>
+    <div class="mist-layer"></div>
+
+    <header class="topbar shell fade-up">
+      <nav class="topnav" aria-label="Primary navigation">
+        <button data-scroll-to="introduction">Why it matters</button>
+        <button data-scroll-to="logger-section">Log today</button>
+        <label class="nav-jump-wrap" for="navJumpSelect">
+          <span>Jump</span>
+          <select id="navJumpSelect" data-jump-select>
+            <option value="">Jump to...</option>
+            <option value="introduction">Introduction</option>
+            <option value="animal-section">Animal companion</option>
+            <option value="logger-section">Activity logger</option>
+            <option value="auth-section">Account</option>
+            <option value="logs-section">Logged activities</option>
+          </select>
+        </label>
+      </nav>
+    </header>
+
+    <section class="shell hero-banner fade-up" id="heroBannerSection">
+      <div class="hero-banner-image" id="heroBanner" role="img" aria-label="Forest slideshow banner"></div>
+      <div class="hero-banner-overlay">
+        <img class="banner-logo" src="./assets/carbon-crumbs-logo.svg" alt="Carbon Crumbs logo" />
+        <div id="bannerDots" class="banner-dots" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <main id="home" class="shell page-grid">
+      <section class="hero card hero-blend fade-up">
+        <div class="hero-copy">
+          <span class="eyebrow">Personal Project • Carbon Crumbs</span>
+          <h1>Every footprint leaves a story. Let yours grow gentler.</h1>
+          <p>
+            Carbon Crumbs helps people understand the weight of daily choices, one small entry at a time.
+            Choose an animal companion, track everyday activities, and watch your footprint deepen or soften in
+            earthy pastel shades.
+          </p>
+          <div class="hero-actions">
+            <button class="primary-button" data-scroll-to="logger-section">Start today’s log</button>
+            <button class="secondary-button" data-scroll-to="introduction">Read the introduction</button>
+          </div>
+          <div class="hero-stat-ribbon">
+            <article>
+              <strong id="totalEmissionsValue">0.00 kg</strong>
+              <span>Total logged</span>
+            </article>
+            <article>
+              <strong id="weeklyTotalValue">0.00 kg</strong>
+              <span>This week</span>
+            </article>
+            <article>
+              <strong id="streakValue">0 days</strong>
+              <span>Streak</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="hero-visual-stack">
+          <div class="hero-panel tall" style="background-image: url('./assets/forest-hd-2.jpg')"></div>
+          <div class="hero-panel" style="background-image: url('./assets/forest-hd-1.jpg')"></div>
+          <div class="hero-panel" style="background-image: url('./assets/forest-hd-3.jpg')"></div>
+        </div>
+      </section>
+
+      <section id="introduction" class="card intro-section fade-up">
+        <div class="section-heading">
+          <div>
+            <span class="section-tag">A moving introduction</span>
+            <h2>What is a carbon footprint, really?</h2>
+          </div>
+        </div>
+        <div class="intro-grid">
+          <div class="intro-copy sentimental-copy">
+            <p>
+              A carbon footprint is not just a number on a dashboard. It is the quiet trace our lives leave behind in
+              the air, in the oceans, in the forests, and in the futures of people we may never meet.
+            </p>
+            <p>
+              It lives in the fuel behind a short drive, the electricity behind a bright room, the meal on a plate, and
+              the habits we repeat without thinking. None of those moments feel dramatic on their own. Yet together,
+              they gather into something much bigger than us — a pattern of impact that reaches far beyond a single day.
+            </p>
+            <p>
+              That is why Carbon Crumbs exists. Not to shame people, but to awaken them. To show that change is rarely a
+              giant leap; it is usually a trail of smaller choices, softer choices, kinder choices. A footprint can be
+              heavy, but it can also be healed.
+            </p>
+            <p>
+              When we reduce our impact, we are not only lowering emissions. We are protecting rivers that should stay
+              clear, forests that should stay alive, seasons that should still feel familiar, and futures that should
+              still feel possible. We do it because this planet is not just where we live — it is what holds every breath,
+              every memory, every home, every child, every hope.
+            </p>
+            <p>
+              And once you truly feel that, reducing your carbon footprint stops being a chore. It becomes an act of care.
+              A promise. A way of saying: <em>I was here, and I tried to leave the world lighter than I found it.</em>
+            </p>
+          </div>
+          <div class="intro-image-card soft-panel" style="background-image: url('./assets/light-forest.jpeg')">
+            <div class="intro-image-overlay">
+              <h3>Small crumbs. Great care.</h3>
+              <p>Each mindful choice is a quiet kindness to the living world.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="animal-section" class="card fade-up">
+        <div class="section-heading responsive-heading">
+          <div>
+            <span class="section-tag">Animal companion</span>
+            <h2>Your footprint has a living guide</h2>
+          </div>
+          <label class="inline-field">
+            Choose animal
+            <select id="profileAnimalSelect"></select>
+          </label>
+        </div>
+
+        <div class="animal-grid">
+          <article class="soft-panel animal-feature">
+            <div class="animal-avatar" id="animalHeroEmoji">🦌</div>
+            <div>
+              <p class="overline">Current companion</p>
+              <h3 id="animalNameValue">Deer</h3>
+              <p id="animalStory" class="muted-text">A graceful forest guide for mindful daily choices.</p>
+            </div>
+          </article>
+
+          <article class="soft-panel animal-feature mood-panel">
+            <p class="overline">Footprint mood</p>
+            <h3 id="latestFootprintStatus">Fresh moss</h3>
+            <p id="animalFootprintValue" class="muted-text">No activities logged yet.</p>
+          </article>
+        </div>
+
+        <div id="shadeLegend" class="shade-legend"></div>
+        <div id="footprintTrail" class="footprint-trail"></div>
+      </section>
+
+      <section id="logger-section" class="card fade-up">
+        <div class="section-heading responsive-heading">
+          <div>
+            <span class="section-tag">1. Activity logging</span>
+            <h2>Leave today’s carbon crumbs</h2>
+          </div>
+          <div class="guest-pill" id="storageStatus">Guest mode • Local storage enabled</div>
+        </div>
+
+        <form id="activityForm" class="activity-form">
+          <div class="form-grid">
+            <label>
+              Preset activity
+              <select id="presetSelect">
+                <option value="">Choose a preset or create your own</option>
+              </select>
+            </label>
+            <label>
+              Activity title
+              <input id="titleInput" type="text" placeholder="e.g. Car commute" required />
+            </label>
+            <label>
+              Category
+              <select id="categoryInput" required>
+                <option value="transport">Transport</option>
+                <option value="food">Food</option>
+                <option value="energy">Energy</option>
+              </select>
+            </label>
+            <label>
+              Quantity
+              <input id="quantityInput" type="number" min="0.1" step="0.1" value="1" required />
+            </label>
+            <label>
+              CO₂ per unit (kg)
+              <input id="co2Input" type="number" min="0.1" step="0.1" value="2.5" required />
+            </label>
+            <label>
+              Date
+              <input id="dateInput" type="date" required />
+            </label>
+          </div>
+          <label>
+            Note
+            <textarea id="noteInput" rows="3" placeholder="Optional note about the activity"></textarea>
+          </label>
+          <div class="form-actions">
+            <button class="primary-button" type="submit">Add activity</button>
+            <button class="secondary-button" type="button" id="demoFillButton">Load demo mix</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="auth-section" class="card fade-up">
+        <div class="section-heading responsive-heading">
+          <div>
+            <span class="section-tag">2. User accounts</span>
+            <h2>Register or sign in</h2>
+          </div>
+          <button class="secondary-button small-button" id="logoutButton" hidden>Log out</button>
+        </div>
+
+        <div class="auth-shell">
+          <div class="auth-tabs">
+            <button class="auth-tab active" data-auth-mode="login">Login</button>
+            <button class="auth-tab" data-auth-mode="register">Register</button>
+          </div>
+          <form id="authForm" class="auth-form">
+            <label id="nameField" class="hidden">
+              Name
+              <input id="nameInput" type="text" placeholder="Your name" />
+            </label>
+            <label>
+              Email
+              <input id="emailInput" type="email" placeholder="name@example.com" required />
+            </label>
+            <label>
+              Password
+              <input id="passwordInput" type="password" placeholder="At least 6 characters" required />
+            </label>
+            <label id="authAnimalField" class="hidden">
+              Animal companion
+              <select id="authAnimalInput"></select>
+            </label>
+            <button class="primary-button" type="submit" id="authSubmitButton">Login</button>
+          </form>
+          <div class="account-state" id="accountState">
+            <strong>Guest mode is active.</strong>
+            <span>Your activity trail is saved in your browser until you choose to sign in and sync it.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="metrics-grid fade-up">
+        <article class="metric-card card">
+          <span>Top category</span>
+          <strong id="topCategoryValue">Transport</strong>
+          <small id="topCategorySubtext">0.00 kg so far</small>
+        </article>
+        <article class="metric-card card">
+          <span>Community average</span>
+          <strong id="communityAverageValue">22.4 kg</strong>
+          <small>Rolling weekly comparison</small>
+        </article>
+        <article class="metric-card card">
+          <span>Highest-emission behavior</span>
+          <strong id="topActivityValue">Nothing logged yet</strong>
+          <small id="topActivitySubtext">Start tracking to discover your patterns</small>
+        </article>
+      </section>
+
+      <section class="card fade-up">
+        <div class="section-heading responsive-heading">
+          <div>
+            <span class="section-tag">3. Insight engine</span>
+            <h2>Weekly goal, bar chart, and personal tips</h2>
+          </div>
+        </div>
+
+        <div class="goal-grid">
+          <article class="soft-panel goal-card">
+            <div class="goal-header">
+              <div>
+                <p class="overline">Weekly reduction goal</p>
+                <h3 id="goalValue">35 kg</h3>
+              </div>
+              <label class="inline-field compact-field">
+                Set goal
+                <input id="goalInput" type="number" min="1" step="1" value="35" />
+              </label>
+            </div>
+            <button class="primary-button small-button" id="saveGoalButton" type="button">Save goal</button>
+            <div class="goal-track">
+              <div class="goal-fill" id="goalFill"></div>
+            </div>
+            <p id="goalStatusText" class="muted-text">Your weekly goal progress will appear here.</p>
+          </article>
+
+          <article class="soft-panel comparison-card">
+            <p class="overline">Community comparison</p>
+            <h3 id="comparisonHeadline">You're just getting started.</h3>
+            <p id="comparisonText" class="muted-text">Log activities to compare your impact with the community average.</p>
+          </article>
+        </div>
+
+        <div class="chart-grid">
+          <article class="soft-panel chart-card">
+            <div class="chart-heading">
+              <div>
+                <p class="overline">Visual summary</p>
+                <h3>Past seven days</h3>
+              </div>
+              <div class="chart-legend-pill">Bar chart</div>
+            </div>
+            <div id="weeklyBarChart" class="weekly-bar-chart" aria-label="Weekly emissions bar chart"></div>
+          </article>
+
+          <article class="soft-panel tip-card">
+            <p class="overline">Personalized tips</p>
+            <h3>How you can soften your trail</h3>
+            <ul id="tipsList" class="tips-list"></ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="logs-section" class="card fade-up">
+        <div class="section-heading responsive-heading">
+          <div>
+            <span class="section-tag">Logged activities</span>
+            <h2>Your daily trail</h2>
+          </div>
+          <label class="inline-field">
+            Filter by category
+            <select id="categoryFilter">
+              <option value="all">All</option>
+              <option value="transport">Transport</option>
+              <option value="food">Food</option>
+              <option value="energy">Energy</option>
+            </select>
+          </label>
+        </div>
+        <div id="activityList" class="activity-list"></div>
+      </section>
+
+    </main>
+
+    <footer class="shell footer-note fade-up">Carbon Crumbs • Built by Quantum Cupcake • Made to turn awareness into care.</footer>
+
+    <div id="toast" class="toast"></div>
+    <script src="./app.js"></script>
+  </body>
+<footer>
+  <em>
+    A Quantum Cupcake creation • Designed with care and a sprinkle of whimsy • Made to inspire lighter footsteps on this beautiful planet we call home.
+  </em>
+</footer>
+</html>
